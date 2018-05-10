@@ -1,0 +1,147 @@
+*{
+  margin:0;
+  padding: 0;
+
+}
+
+/*-----------------------
+----------FONTES---------
+------------------------*/
+
+@font-face {
+  font-family: HKConcentrate-Regular;
+  src:url(assets/HKConcentrate-Regular.otf);
+}
+
+@font-face {
+  font-family: Now-Regular;
+  src:url(assets/Now-Regular.otf);
+}
+
+@font-face {
+  font-family: Now-Bold;
+  src:url(assets/Now-Bold.otf);
+}
+
+@font-face {
+  font-family: HKNova-Medium;
+  src:url(assets/HKNova-Medium.woff);
+}
+
+@font-face {
+  font-family: HKZercon-Regular;
+  src:url(assets/HKZercon-Regular.woff);
+}
+
+/*-----------------------
+----------GRELHA---------
+------------------------*/
+.grid{
+  display: grid;
+  grid-template-columns: 1fr 500px 500px 1fr;
+  /*se quiser um espaco em branco ponho .*/
+  grid-template-areas:
+  '. navbar navbar .'
+  '. bio bio .'
+  '. footer social .';
+  grid-gap:20px;
+  /*grid-gap:10px
+  cria um espaco de 10px entre todas as rows e columns*/
+}
+
+/*-----------------------
+----------NAVBAR---------
+------------------------*/
+
+.navbar{
+  /*vai da 1 a 3 ocupa toda a largura*/
+  /*pode ser tambem:*/
+  /*grid-column-end: span 2;
+  ou grid-column-start:1;
+  grid-column-end:3;*/
+  /*grid-column: 1 / 3;*/
+  grid-area:navbar;
+  justify-self: end;
+  font-family:HKConcentrate-Regular;
+}
+
+/*padding: top right bottom left;*/
+.navbar-content{
+  list-style-type: none;
+  display: block;
+  padding: 20px 0 0 0;
+
+}
+
+li{
+  display: inline;
+}
+
+/*-----------------------
+----------BIO------------
+------------------------*/
+
+.bio{
+  grid-area:bio;
+  font-family:HKZercon-Regular;
+  font-size: 60px;
+  line-height: 80px;
+}
+
+/*-----------------------
+----------FOOTER---------
+------------------------*/
+
+.footer{
+  grid-area:footer;
+}
+
+/*-----------------------
+--------SOCIAL-----------
+------------------------*/
+.social{
+  grid-area:social;
+}
+
+.social_links li a{
+  display: block;
+}
+
+/*-----------------------
+--------RESPONSIVE-------
+------------------------*/
+
+@media only screen and (max-width: 600px) {
+
+  .grid{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+    'navbar'
+    'bio'
+    'footer'
+    'social';
+    grid-gap:40px;
+    padding-left: 10px;
+    padding-bottom: 30px;
+    padding-top: 10px;
+  }
+
+  .navbar{
+    justify-self: center;
+  }
+
+  .bio{
+    font-size:33px;
+    line-height: 50px;
+  }
+
+}
+
+.grid div:nth-child(even){
+  background-color: aqua;
+}
+
+.grid div:nth-child(odd){
+  background-color: green;
+}

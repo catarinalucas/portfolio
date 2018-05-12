@@ -9,27 +9,23 @@
 
 @font-face {
   font-family: HKConcentrate-Regular;
-  src:url(assets/HKConcentrate-Regular.otf);
+  src:url(assets/HKConcentrate-Regular.woff);
 }
 
 @font-face {
-  font-family: Now-Regular;
-  src:url(assets/Now-Regular.otf);
-}
-
-@font-face {
-  font-family: Now-Bold;
-  src:url(assets/Now-Bold.otf);
-}
-
-@font-face {
-  font-family: HKNova-Medium;
-  src:url(assets/HKNova-Medium.woff);
+  font-family: HKConcentrate-Bold;
+  src:url(assets/HKConcentrate-Bold.woff);
 }
 
 @font-face {
   font-family: HKZercon-Regular;
   src:url(assets/HKZercon-Regular.woff);
+}
+
+.title-detail{
+  font-family: 'HKConcentrate-Regular', 'Helvetica', sans-serif;
+  font-weight: bold;
+  font-size: 22px;
 }
 
 .text-detail{
@@ -105,24 +101,68 @@ li{
   line-height: 80px;
 }
 
+.animated-text{
+  display: inline-block;
+	color: #343434;
+	transition: color 250ms, text-shadow 250ms;
+	text-decoration: none;
+	text-shadow: 0px 1px 0px rgba(255, 255, 255, 1);
+  position: relative;
+		z-index: 0;
+}
+
+.animated-text::after{
+  position: absolute;
+  z-index: -1;
+	bottom: -5px;
+	left: 50%;
+	transform: translateX(-50%);
+	content: '';
+	width: 100%;
+	height: 3px;
+	background-color: #343434;
+	transition: all 250ms;
+}
+
+.animated-text:hover{
+  color: white;
+	text-shadow: 0px 1px 0px rgba(0, 0, 0, 1);
+}
+
+.animated-text:hover::after{
+  height: 105%;
+	width: 105%;
+}
 /*-----------------------
 ----------FOOTER---------
 ------------------------*/
 
 .footer{
   grid-area:footer;
+  line-height: 22px;
 }
 
+.footer-content{
+  padding-top: 10px;
+}
 /*-----------------------
 --------SOCIAL-----------
 ------------------------*/
 .social{
   grid-area:social;
+  line-height: 28px;
+}
+
+.social_links{
+  padding-top: 10px;
 }
 
 .social_links li a{
   display: block;
+  word-spacing: 30px;
+
 }
+
 
 /*-----------------------
 --------ABOUT------------

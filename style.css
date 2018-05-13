@@ -3,6 +3,14 @@
   padding: 0;
 }
 
+body{
+  background-color: #ededed;
+}
+
+a{
+  text-decoration: none;
+  color: #000;
+}
 /*-----------------------
 ----------FONTES---------
 ------------------------*/
@@ -32,6 +40,10 @@
   font-family: 'HKConcentrate-Regular', 'Helvetica', sans-serif;
 }
 
+.text-detail__bold{
+  font-family: 'HKConcentrate-Bold', 'Helvetica', sans-serif;
+}
+
 .text-principal{
   font-family:'HKZercon-Regular','Roboto Mono',sans-serif;
 }
@@ -47,7 +59,7 @@
   '. navbar navbar .'
   '. bio bio .'
   '. footer social .';
-  grid-gap:20px;
+  grid-gap:30px;
   /*grid-gap:10px
   cria um espaco de 10px entre todas as rows e columns*/
 }
@@ -59,7 +71,9 @@
   '. navbar navbar .'
   '. title-about . .'
   '. about photo .'
-  '. curriculum curriculum .';
+  '. curriculum curriculum .'
+  '. skills skills .'
+  '. learn talk . ';
   grid-gap:20px;
 }
 
@@ -87,6 +101,10 @@
 
 }
 
+.navbar a:hover{
+  color:#3242D5;
+}
+
 li{
   display: inline;
 }
@@ -103,7 +121,7 @@ li{
 
 .animated-text{
   display: inline-block;
-	color: #343434;
+	color: #000;
 	transition: color 250ms, text-shadow 250ms;
 	text-decoration: none;
 	text-shadow: 0px 1px 0px rgba(255, 255, 255, 1);
@@ -114,24 +132,28 @@ li{
 .animated-text::after{
   position: absolute;
   z-index: -1;
-	bottom: -5px;
+	bottom: -1px;
 	left: 50%;
 	transform: translateX(-50%);
 	content: '';
 	width: 100%;
 	height: 3px;
-	background-color: #343434;
+	background-color: #000;
 	transition: all 250ms;
 }
 
 .animated-text:hover{
-  color: white;
+  color: #B1B3E8;
 	text-shadow: 0px 1px 0px rgba(0, 0, 0, 1);
 }
 
 .animated-text:hover::after{
   height: 105%;
 	width: 105%;
+}
+
+.animated-function{
+  color:#3242D5;
 }
 /*-----------------------
 ----------FOOTER---------
@@ -163,6 +185,9 @@ li{
 
 }
 
+.social_links li a:hover{
+  color:#3242D5;
+}
 
 /*-----------------------
 --------ABOUT------------
@@ -173,6 +198,11 @@ li{
 
 .about{
   grid-area: about;
+  font-size: 18px;
+}
+
+.about p{
+  padding: 10px 10px 10px 0;
 }
 
 .photo{
@@ -181,6 +211,76 @@ li{
 
 .curriculum{
   grid-area: curriculum;
+  line-height: 30px;
+}
+
+.curriculum p{
+  padding-top: 25px;
+}
+
+.skills{
+  grid-area: skills;
+  display: block;
+  line-height: 30px;
+}
+.skills h1{
+  padding-top: 10px;
+}
+.skills p{
+  padding-top: 25px;
+}
+
+.learn{
+  grid-area: learn;
+  display: block;
+  line-height: 30px;
+}
+
+.learn h1{
+  padding-top: 10px;
+}
+
+.learn p{
+  padding-top: 25px;
+}
+
+.talk{
+  grid-area: talk;
+  justify-self:center;
+  font-size: 40px;
+  color: #B1B3E8;
+  padding-bottom: 30px;
+}
+
+.talk-moving_zone{
+  position: relative;
+  width:500px;
+  height:200px;
+  perspective: 800px;
+  padding-top: 10px;
+}
+
+.talk-popup{
+  position: absolute;
+   width:300px;
+   padding-left:30px;
+   transform-style: preserve-3d;
+}
+
+.talk-popup:before {
+    content: '';
+    position: absolute;
+    left:5%;
+    top:5%;
+    width:90%;
+    height:90%;
+    border-radius: inherit;
+    transform: translateZ(-100px);
+}
+
+.popup-text{
+    text-align: center;
+    transform: translateZ(15px);
 }
 /*-----------------------
 ---------ATOMS-----------
@@ -189,7 +289,10 @@ li{
 .hidden-md{
   display: block;
 }
-
+/* 1026 a 1114*/
+.hidden-one{
+  visibility:hidden;
+}
 /*-----------------------
 --------RESPONSIVE-------
 ------------------------*/
@@ -199,8 +302,27 @@ li{
     grid-template-columns: 1fr 10fr 10fr 1fr;
   }
 
-  .hidden-md{
+  /*.hidden-md{
     display: none;
+  }*/
+
+  .hidden-lg{
+    visibility: visible;
+  }
+}
+
+
+
+@media  only screen and (min-width: 1026px ) and (max-width: 1114px){
+  .hidden-one{
+    visibility: visible;
+  }
+
+}
+
+@media only screen and (min-width: 600px) and (max-width: 1025px){
+  .bio{
+    font-size:50px;
   }
 }
 
@@ -220,6 +342,23 @@ li{
     padding-top: 10px;
   }
 
+  .grid-about{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+    'navbar'
+    'about'
+    'photo'
+    'curriculum'
+    'skills'
+    'learn'
+    'talk';
+    grid-gap:40px;
+    padding-left: 10px;
+    padding-bottom: 30px;
+    padding-top: 10px;
+  }
+
   .navbar{
     justify-self: center;
   }
@@ -228,6 +367,14 @@ li{
     font-size:33px;
     line-height: 50px;
   }
+
+  .about{
+    font-size: 16px;
+  }
+
+
+
+
 
 }
 

@@ -9,7 +9,8 @@ body{
 
 a{
   text-decoration: none;
-  color: #000;
+  color:#000;
+
 }
 /*-----------------------
 ----------FONTES---------
@@ -48,6 +49,10 @@ a{
   font-family:'HKZercon-Regular','Roboto Mono',sans-serif;
 }
 
+.caps{
+  text-transform: uppercase;
+}
+
 /*-----------------------
 ----------GRELHA---------
 ------------------------*/
@@ -58,7 +63,8 @@ a{
   grid-template-areas:
   '. navbar navbar .'
   '. bio bio .'
-  '. footer social .';
+  '. footer social .'
+  '. projects go-to .';
   grid-gap:30px;
   /*grid-gap:10px
   cria um espaco de 10px entre todas as rows e columns*/
@@ -73,9 +79,22 @@ a{
   '. about photo .'
   '. curriculum curriculum .'
   '. skills skills .'
-  '. learn talk . ';
-  grid-gap:20px;
+  '. learn go-to . ';
+  grid-gap:30px;
 }
+
+.grid-project{
+  display: grid;
+  grid-template-columns: 1fr 40vw 40vw 1fr;
+  grid-template-areas:
+  '. navbar navbar .'
+  '. title-stereo . .'
+  '. stereo photo-principal .'
+  '. photo-left photo-right .'
+  '. go-to go-to .';
+  grid-gap:30px;
+}
+
 
 /*-----------------------
 ----------NAVBAR---------
@@ -103,6 +122,7 @@ a{
 
 .navbar a:hover{
   color:#3242D5;
+  cursor:pointer;
 }
 
 li{
@@ -122,34 +142,35 @@ li{
 .animated-text{
   display: inline-block;
 	color: #000;
-	transition: color 250ms, text-shadow 250ms;
+	transition: color 250ms;/*text-shadow 250ms;*/
 	text-decoration: none;
-	text-shadow: 0px 1px 0px rgba(255, 255, 255, 1);
+	/*text-shadow: 0px 1px 0px rgba(255, 255, 255, 1);*/
   position: relative;
-		z-index: 0;
+	z-index: 0;
 }
 
 .animated-text::after{
   position: absolute;
   z-index: -1;
-	bottom: -1px;
+	bottom: 5px;
 	left: 50%;
 	transform: translateX(-50%);
 	content: '';
 	width: 100%;
 	height: 3px;
 	background-color: #000;
+  padding: 0 10px;
 	transition: all 250ms;
 }
 
 .animated-text:hover{
   color: #B1B3E8;
-	text-shadow: 0px 1px 0px rgba(0, 0, 0, 1);
+	/*text-shadow: 0px 1px 0px rgba(0, 0, 0, 1);*/
 }
 
 .animated-text:hover::after{
-  height: 105%;
-	width: 105%;
+  height: 100%;
+	width: 100%;
 }
 
 .animated-function{
@@ -181,12 +202,52 @@ li{
 
 .social_links li a{
   display: block;
-  word-spacing: 30px;
+  letter-spacing: 2px;
 
 }
 
 .social_links li a:hover{
   color:#3242D5;
+}
+
+/*-----------------------
+--------PROJECTS---------
+------------------------*/
+
+.projects{
+  grid-area:projects;
+  padding-top: 20px;
+  padding-bottom: 30px;
+}
+
+.projects_list{
+  padding-top: 20px;
+}
+.projects_list li{
+  display: block;
+  line-height: 40px;
+  font-size:20px;
+}
+
+.projects_list li a:hover{
+  color:#3242D5;
+}
+
+.go-to{
+  grid-area: go-to;
+  justify-self:end;
+  align-self: end;
+  padding-bottom: 30px;
+  color: #000;
+}
+
+.go-to{
+  font-size: 30px;
+}
+
+.go-to h1:hover{
+  color: #B1B3E8;
+	/*text-shadow: 0px 1px 0px rgba(0, 0, 0, 1);*/
 }
 
 /*-----------------------
@@ -207,6 +268,12 @@ li{
 
 .photo{
   grid-area: photo;
+  justify-self:center;
+}
+
+.photo img{
+  width:90%;
+  height: auto;
 }
 
 .curriculum{
@@ -234,6 +301,7 @@ li{
   grid-area: learn;
   display: block;
   line-height: 30px;
+  padding-bottom: 30px;
 }
 
 .learn h1{
@@ -282,6 +350,103 @@ li{
     text-align: center;
     transform: translateZ(15px);
 }
+
+/*-----------------------
+--------STEREO-----------
+------------------------*/
+.title-stereo{
+  grid-area: title-stereo;
+}
+
+.stereo{
+  grid-area: stereo;
+
+}
+.photo-principal_stereo{
+  background: url("assets/stereo1.png");
+}
+.photo-principal_ciclo{
+  background: url("assets/ciclo1.png");
+}
+
+.photo-principal_babel{
+  background: url("assets/babel3.png");
+}
+.photo-principal_green{
+  background: url("assets/greenday_principal.png");
+}
+.photo-principal{
+  grid-area: photo-principal;
+  justify-self:center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 50vh;
+}
+.photo-left_stereo{
+  background: url("assets/stereo3.png");
+}
+.photo-left_ciclo{
+  background: url("assets/ciclo2.png");
+}
+
+.photo-left_babel{
+  background: url("assets/babel7.png");
+}
+
+.photo-left_green{
+  background: url("assets/greenday_left.png");
+}
+
+
+.photo-left{
+  grid-area: photo-left;
+  justify-self:center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 50vh;
+}
+
+.photo-right_stereo{
+  background: url("assets/stereo2.png");
+}
+.photo-right_ciclo{
+  background: url("assets/ciclo3.jpg");
+  background-position: right top;
+}
+
+.photo-right_babel{
+  background: url("assets/babel2.png");
+}
+.photo-right_green{
+  background: url("assets/greenday_right.png");
+}
+
+.photo-right{
+  grid-area: photo-right;
+  justify-self:end;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 50vh;
+}
+
+.photo-right img{
+  width:70%;
+  height: auto;
+
+}
+
+.behance_link{
+  padding-top: 40px;
+  color:#3242D5;
+}
+
+
 /*-----------------------
 ---------ATOMS-----------
 ------------------------*/
@@ -311,7 +476,11 @@ li{
   }
 }
 
-
+@media only screen and(min-width:1026px){
+  .bio{
+    font-size: 80px;
+  }
+}
 
 @media  only screen and (min-width: 1026px ) and (max-width: 1114px){
   .hidden-one{
@@ -335,7 +504,9 @@ li{
     'navbar'
     'bio'
     'footer'
-    'social';
+    'social'
+    'projects'
+    'go-to';
     grid-gap:40px;
     padding-left: 10px;
     padding-bottom: 30px;
@@ -347,12 +518,30 @@ li{
     grid-template-columns: 1fr;
     grid-template-areas:
     'navbar'
+    'title-about'
     'about'
     'photo'
     'curriculum'
     'skills'
     'learn'
-    'talk';
+    'go-to';
+    grid-gap:40px;
+    padding-left: 10px;
+    padding-bottom: 30px;
+    padding-top: 10px;
+  }
+
+  .grid-project{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+    'navbar'
+    'title-stereo'
+    'stereo'
+    'photo-principal'
+    'photo-left'
+    'photo-right'
+    'go-to';
     grid-gap:40px;
     padding-left: 10px;
     padding-bottom: 30px;
@@ -372,16 +561,17 @@ li{
     font-size: 16px;
   }
 
+  .go-to{
+    justify-self:center;
+  }
+
+  .curriculum{
+    font-size:16px;
+  }
 
 
 
 
-}
 
-.grid div:nth-child(even){
-  /*background-color: aqua;*/
-}
 
-.grid div:nth-child(odd){
-  background-color: green;
 }

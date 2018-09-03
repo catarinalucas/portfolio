@@ -1,0 +1,504 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+
+@font-face {
+  font-family:'Zwizz-Bold';
+  src:url(assets/Zwizz-Bold.otf);
+}
+
+@font-face {
+  font-family:'Zwizz-Regular';
+  src:url(assets/Zwizz-Regular.otf);
+}
+
+@font-face {
+  font-family: 'ChronosSerif-Stroked';
+  src:url(assets/ChronosSerif-Stroked.otf);
+}
+
+@font-face {
+  font-family: 'ChronosSerif-Filled';
+  src:url(assets/ChronosSerif-Filled.otf);
+}
+
+body{
+  background-color: #000;
+  color:#fff;
+}
+
+h1{
+  font-family: 'Zwizz-Bold';
+  font-size: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+h3{
+  font-family: 'Zwizz-Regular';
+  font-size: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+p{
+  font-family: 'Zwizz-Regular';
+  font-size: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  line-height: 1.56;
+}
+
+ul li{
+  list-style: none;
+  font-family: 'Zwizz-Regular';
+  font-size: 15px;
+  line-height: 20px;
+}
+
+.secondary_font{
+  font-family: 'ChronosSerif-Filled';
+
+}
+.grid{
+  display: grid;
+  grid-template-columns: 1fr 40vw 40vw 1fr;
+  grid-template-rows: auto;
+  /*se quiser um espaco em branco ponho .*/
+  grid-template-areas:
+  '. scene scene .'
+  'intro intro intro intro'
+  ' numeros numeros numeros numeros'
+  '. crimes_celeres crimes_celeres .'
+  '. crimes_celeres-photo crimes_celeres-photo .'
+  '. impressoes_genitais impressoes_genitais .'
+  '. retratos retratos .'
+  '. story_abordo story_abordo .'
+  '. fotos_homem fotos_homem .'
+  '. fotos_homem-photo fotos_homem-photo .'
+  '. album_familia album_familia .'
+  '. instantaneos instantaneos .'
+  '. espaco espaco-photo .'
+  '. acao acao .'
+  '. angulos angulos .'
+  '. referencias_geral referencias_geral .'
+  '. referencias_one referencias_two .'
+  '. custo custo .'
+  '. montagem montagem .'
+  '. creditos creditos .';
+
+  grid-gap:10px;
+  /*grid-gap:10px
+  cria um espaco de 10px entre todas as rows e columns*/
+}
+/*---------------
+---DIAGRAMA------
+---------------*/
+#scene{
+  grid-area:scene;
+  justify-self:center;
+
+}
+
+/*----first layer----*/
+.scene_corpo{
+  background-image: url(assets/imagens/scene/nivel1_scene_corpo.svg);
+  background-repeat: no-repeat;
+  height:437px;
+  width: 437px;
+  background-position: center;
+  margin-left: 24%;
+  margin-top: 24%;
+}
+/*----second layer----*/
+.scene_bala{
+  background-image: url(assets/imagens/scene/nivel2_scene_bala.svg);
+  background-repeat: no-repeat;
+  height:280px;
+  width: 280px;
+  margin-left: 40%;
+  margin-top: 20%;
+}
+
+.scene_dna{
+  background-image: url(assets/imagens/scene/nivel2_scene_dna.svg);
+  background-repeat: no-repeat;
+  height:200px;
+  width: 200px;
+  margin-left: 57%;
+  margin-top: 30%;
+}
+
+.scene_ponteiros{
+  background-image: url(assets/imagens/scene/nivel2_scene_ponteiros.svg);
+  background-repeat: no-repeat;
+  height:320px;
+  width: 320px;
+  margin-left: 38%;
+  margin-top: 50%;
+}
+/*----third layer----*/
+.scene_ramos{
+  background-image: url(assets/imagens/scene/nivel3_scene_ramos.svg);
+  background-repeat: no-repeat;
+  height:300px;
+  width: 300px;
+  margin-left: 45%;
+  margin-top: 45%;
+}
+/*----fourth layer----*/
+.scene_cenas{
+  background-image: url(assets/imagens/scene/nivel4_scene_cenas.svg);
+  background-repeat: no-repeat;
+  height:280px;
+  width: 280px;
+  margin-left: 37%;
+  margin-top: 37%;
+}
+.scene_coracao{
+  background-image: url(assets/imagens/scene/nivel4_scene_coracao.svg);
+  background-repeat: no-repeat;
+  height:280px;
+  width: 280px;
+  margin-left: 50%;
+  margin-top: 16%;
+}
+.scene_escuridao{
+  background-image: url(assets/imagens/scene/nivel4_scene_escuridao.svg);
+  background-repeat: no-repeat;
+  height:300px;
+  width: 300px;
+  margin-left: 20%;
+  margin-top: 15%;
+}
+.scene_fluido{
+  background-image: url(assets/imagens/scene/nivel4_scene_fluido.svg);
+  background-repeat: no-repeat;
+  height:300px;
+  width: 300px;
+  margin-left: 20%;
+  margin-top: 40%;
+
+}
+/*----fifth layer----*/
+.scene_folhas{
+  background-image: url(assets/imagens/scene/nivel5_scene_folhas.svg);
+  background-repeat: no-repeat;
+  height:330px;
+  width: 330px;
+  margin-left: 30%;
+  margin-top: 12%;
+}
+.scene_impressao{
+  background-image: url(assets/imagens/scene/nivel5_scene_impressao.svg);
+  background-repeat: no-repeat;
+  height:300px;
+  width: 300px;
+  margin-left: 15%;
+  margin-top: 30%;
+}
+
+/*----sixth layer----*/
+.scene_circulo{
+  background-image: url(assets/imagens/scene/nivel6_scene_circulo.svg);
+  background-repeat: no-repeat;
+  height:800px;
+  width: 800px;
+}
+.intro{
+  grid-area:intro;
+  padding-bottom: 120px;
+}
+
+
+/*translate:(horizontal,vertical)*/
+.intro h1{
+  font-family: 'ChronosSerif-Stroked';
+  font-size: 150px;
+  letter-spacing: 3px;
+  opacity: 0.2;
+  transform: translate(-200px,80px);
+}
+
+.text-container{
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.numeros{
+  padding-top: 50px;
+  padding-bottom: 150px;
+  grid-area:numeros;
+
+}
+
+.numeros svg{
+  width: 140px;
+  height: 140px;
+  padding-top: 50px;
+  padding-left: 20px;
+}
+
+
+
+.numeros-wrapper .numeros__element{
+  transition: 0.4s ease;
+}
+.numeros-wrapper:hover .numeros__element{
+  opacity: 0.2;
+  transition: 0.2s ease;
+}
+
+.numeros__element--1:hover{
+  opacity: 1 !important;
+}
+.numeros__element--2:hover{
+  opacity: 1 !important;
+}
+.numeros__element--3:hover{
+  opacity: 1 !important;
+}
+.numeros__element--4:hover{
+  opacity: 1 !important;
+}
+.numeros__element--5:hover{
+  opacity: 1 !important;
+}
+.numeros__element--6:hover{
+  opacity: 1 !important;
+}
+.numeros__element--7:hover{
+  opacity: 1 !important;
+}
+
+#numeros__interacao{
+  padding-top: 10%;
+  font-size: 25px;
+  letter-spacing: 2;
+  text-align: center;
+}
+
+.numeros__title{
+  font-size: 275px;
+  opacity:0.2;
+  transform: translate(-72px,180px);
+}
+
+.crimes_celeres{
+  grid-area:crimes_celeres;
+  justify-self:center;
+}
+
+.interacoes__text--wrapper{
+  padding-left: 45px;
+  max-width: 600px;
+}
+
+.crimes_celeres-photo{
+  grid-area:crimes_celeres-photo;
+  margin-top: 50px;
+  justify-self:center;
+}
+
+.impressoes_genitais{
+  grid-area:impressoes_genitais;
+  justify-self:center;
+}
+
+.impressoes_genitais-photo img{
+  max-width: 464px;
+  max-height: 252px;
+}
+
+.retratos{
+  grid-area:retratos;
+  justify-self:center;
+}
+
+.story_abordo{
+  grid-area:story_abordo;
+  justify-self:center;
+}
+
+.fotos_homem{
+  grid-area:fotos_homem;
+  justify-self:center;
+}
+
+.fotos_homem-photo{
+  grid-area:fotos_homem-photo;
+  justify-self:center;
+  margin-top: 40px;
+}
+
+.fotos_homem-photo img{
+  max-width: 464px;
+  max-height: 252px;
+  padding-left: 40px;
+
+}
+
+.album_familia{
+  grid-area:album_familia;
+  justify-self:center;
+}
+
+
+.instantaneos{
+  grid-area:instantaneos;
+  padding-bottom: 200px;
+  justify-self:center;
+}
+
+
+
+.espaco{
+  grid-area: espaco;
+}
+
+.espaco-photo{
+  grid-area: espaco-photo;
+
+}
+.espaco-photo img{
+  max-width: 464px;
+  max-height: 252px;
+}
+
+
+
+.referencias_geral{
+  grid-area: referencias_geral;
+}
+
+.referencias_geral img{
+  max-width: 464px;
+  max-height: 252px;
+  transition: 0.2s ease;
+  /*box-shadow: 6px 5px 3px rgba(255,255,255,0.2);*/
+  margin-left: 10px;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  padding-right: 20px;
+}
+
+.referencias_geral img:hover{
+  transform:translate(-2px,-5px);
+}
+.referencias_one{
+  grid-area: referencias_one;
+}
+
+.referencias_one-photo{
+  grid-area: referencias_one-photo;
+  justify-self:center;
+}
+.referencias_one-photo img{
+  max-width: 464px;
+  max-height: 252px;
+}
+
+.referencias_two{
+  grid-area:referencias_two;
+}
+
+.acao{
+  grid-area: acao;
+  align-self: center;
+}
+
+.acao img{
+  max-width: 700px;
+  max-height: 400px;
+  padding-left: 50px;
+}
+.angulos{
+  grid-area: angulos;
+
+}
+
+.angulos img{
+  max-width: 500px;
+  max-height: 300px;
+  padding-left: 30px;
+  padding-top: 60px;
+  padding-bottom: 150px;
+  transition: 0.2s ease;
+}
+
+.angulos img:hover{
+  transform:translate(-2px,-5px);
+}
+
+.custo{
+  grid-area: custo;
+  display: inline-block;
+  justify-self: center;
+  padding-bottom: 220px;
+  padding-top: 100px;
+  margin-left: 20px;
+  padding-left: 10px;
+}
+
+.custo__total{
+  display: inline-block;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.custo__tempo{
+  display: inline-block;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.custo__total--imagem{
+  width:250px;
+  height: 250px;
+  opacity: 0.2;
+  transform:translate(-203px,103px);
+}
+
+.custo__tempo--imagem{
+  opacity: 0.2;
+  width:200px;
+  height: 250px;
+  opacity: 0.6;
+  transform:translate(-150px,78px);
+}
+
+.custo__total--acessorio{
+  font-size: 30px;
+  opacity: 0.7;
+  max-width: 100px;
+
+
+}
+
+.custo__total--text{
+  font-size: 15px;
+  padding-right: 10px;
+  max-width: 100px;
+  opacity: 0.7;
+}
+.montagem{
+  grid-area: montagem;
+  padding-bottom: 50px;
+}
+
+.montagem img{
+  max-width: 464px;
+  max-height: 252px;
+  padding-left: 20px;
+  padding-top: 20px;
+  transition: 0.2s ease;
+}
+
+.montagem img:hover{
+  transform:translate(-2px,-5px);
+}
+.creditos{
+  grid-area:creditos;
+  padding-bottom:100px;
+}

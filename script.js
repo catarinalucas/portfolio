@@ -1,4 +1,7 @@
-var words = ['Web Designer &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;','Front-end Developer','Cena1 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;']
+var words = ['Web Designer &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;',
+'Front-end Developer',
+'Motion Designer &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;',
+'UI/UX Designer &nbsp; &nbsp; &nbsp; &nbsp; &nbsp'];
 var isHover = false;
 var count = 0;
 var intervalo;
